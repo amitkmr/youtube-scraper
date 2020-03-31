@@ -1,4 +1,4 @@
-# Youtube Scrpaper
+# Youtube Scrapper
 
 This repository is collection of scripts which scrap data from youtube. 
 
