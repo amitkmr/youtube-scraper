@@ -8,11 +8,17 @@ This repository is collection of scripts which scrap data from youtube.
 - pipenv
 - python3
 
-## Installing
+## Install & Execute
 Please ensure that you have python3 and [pipenv](https://pipenv-fork.readthedocs.io/en/latest/) installed.
 ```bash
 python3 --version
 pipenv --version
+
+git clone https://github.com/amitkmr/youtube-scrapper.git
+cd youtube-scrapper
+pipenv install
+pipenv shell
+python3 scrap_comments.py --url https://www.youtube.com/watch?v=7CZFpHUPqXw --output data/sample_comments.json
 
 ```
 
