@@ -4,7 +4,7 @@ This repository is collection of scripts which scrap data from youtube.
 
 
 ## Dependencies
-- selenium (Please check the installed chrome version on desktop and download [here](https://chromedriver.chromium.org/downloads) )
+- chromedriver (Please check the installed chrome version on desktop and download [here](https://chromedriver.chromium.org/downloads) )
 - pipenv
 - python3
 
