@@ -17,6 +17,6 @@ pipenv --version
 ```
 
 ## Current Status
-- [ ] Scrap All comments of a video
+- [x] Scrap All comments of a video
 - [ ] Scrap all the videos of a channel
 - [ ] Scrap meta data about a video, things like description, views like etc

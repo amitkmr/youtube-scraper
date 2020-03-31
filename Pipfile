@@ -8,6 +8,10 @@ verify_ssl = true
 [packages]
 selenium = "*"
 beautifulsoup4 = "*"
+requests = "*"
+lxml = "*"
+cssselect = "*"
+isort = "*"
 
 [requires]
 python_version = "3.8"
