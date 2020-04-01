@@ -20,7 +20,15 @@ def get_all_channel_videos(channel_url):
     soup = BeautifulSoup(driver.page_source, "html.parser")
 
     urls = soup.find_all(id="video-title")
-    return [link.get("href") for link in urls if "/watch?" in link.get("href")]
+    return [
+        {
+            "title": youtube_video_item.h3.text,
+            "views": youtube_video_item.find(id="metadata").find_all("span")[1].text,
+            "time": youtube_video_item.find(id="metadata").find_all("span")[2].text,
+            "url": f"https://youtube.com/{youtube_video_item.find('a').get('href')}",
+        }
+        for youtube_video_item in soup.find_all("ytd-grid-video-renderer")
+    ]
 
 
 def scroll_down_until_end():
@@ -81,9 +89,7 @@ def main(argv):
 
         if output:
             with open(file=output, mode="w") as f:
-                videos_data = [
-                    video_data for video_data in get_all_channel_videos(channel_url=url)
-                ]
+                videos_data = get_all_channel_videos(channel_url=url)
                 f.write(json.dumps(videos_data))
         else:
             for video_data in get_all_channel_videos(channel_url=url):
